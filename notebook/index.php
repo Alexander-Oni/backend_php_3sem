@@ -45,11 +45,11 @@
       case 'edit':
         require 'edit.php';
         break;
-      /*
+      
       case 'delete':
         require 'delete.php';
         break;
-      
+      /*
       default:
         require_once 'viewer.php';
         break;
