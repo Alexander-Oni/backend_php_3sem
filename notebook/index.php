@@ -2,8 +2,6 @@
   // флаг для проверки точки входа, защищает файлы от прямого вызова через браузер
   define(constant_name: 'APP', value: true);
 
-  // код подключаемых файлов добавлю позже, пока что определю порядок подключения
-
   require_once 'config.php'; // логика работы с бд
 
   require_once 'menu.php'; // генерация внешнего вида меню
@@ -36,7 +34,27 @@
     <?php
     echo get_menu();
 
-    echo '<hr>'
+    echo '<hr>';
+
+    switch ($page) 
+    {
+      case 'add':
+        require 'add.php';
+        break;
+      /*
+      case 'edit':
+        require 'edit.php';
+        break;
+      
+      case 'delete':
+        require 'delete.php';
+        break;
+      
+      default:
+        require_once 'viewer.php';
+        break;
+      */
+    }
     ?>
   </main>
 </body>

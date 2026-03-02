@@ -8,7 +8,7 @@
   // PHP Data Object
   function get_pdo()
   {
-    $host = 'localhost';    // хост базы данных
+    $host = '127.0.0.1';    // хост базы данных
     $db = 'notebook';           // имя  БД
     $user = 'root';         // логин MySQL
     $pass = '';             // пароль MySQL
