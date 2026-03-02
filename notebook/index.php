@@ -41,11 +41,11 @@
       case 'add':
         require 'add.php';
         break;
-      /*
+    
       case 'edit':
         require 'edit.php';
         break;
-      
+      /*
       case 'delete':
         require 'delete.php';
         break;
