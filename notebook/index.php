@@ -6,7 +6,7 @@
 
   //require_once 'config.php'; логика работы с бд
 
-  //require_once 'menu.php'; генерация внешнего вида меню
+  require_once 'menu.php'; //генерация внешнего вида меню
 
   // пишем логику опрделения того, что хочет от нас получить пользователь
   $page = isset($_GET['page']) ? $_GET['page'] : 'view';
@@ -34,6 +34,9 @@
   <main>
     <!-- здесь будет логика перехода по страницам -->
     <?php
+    echo get_menu();
+
+    echo '<hr>'
     ?>
   </main>
 </body>
