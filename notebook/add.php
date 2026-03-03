@@ -95,7 +95,7 @@
 
 <form method="post">
   <div class="field">
-    <label for="last_name">Фамилия*</label>
+    <label for="last_name">Фамилия</label>
     <input
       type="text"
       name="last_name"
@@ -105,7 +105,7 @@
   </div>
 
   <div class="field">
-    <label for="first_name">Имя*</label>
+    <label for="first_name">Имя</label>
     <input
       type="text"
       name="first_name"

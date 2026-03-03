@@ -1,0 +1,367 @@
+:root {
+  --color-primary: rgb(92, 103, 168); /* Основной синий */
+  --color-primary-dark: rgb(13, 38, 180); /* Темно-синий для hover */
+  --color-primary-light: rgba(92, 103, 168, 0.541); /* Полупрозрачный синий */
+  --color-text: rgb(1, 5, 17); /* Почти черный для текста */
+  --color-text-light: #666; /* Серый для подписей */
+  --color-success: #0f5132; /* Зеленый для успеха */
+  --color-success-bg: #d1e7dd; /* Фон успеха */
+  --color-error: red; /* Красный для ошибок */
+  --color-error-bg: #f8d7da; /* Фон ошибки */
+  --color-white: #fff;
+  --color-gray-light: #f7f7f7;
+  --color-gray-border: #ddd;
+
+  --border-radius: 10px;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== СБРОС И БАЗОВЫЕ СТИЛИ ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-gray-light);
+  color: var(--color-text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== ЗАГОЛОВКИ ========== */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: var(--color-primary-dark);
+  font-size: 2.2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: var(--color-primary);
+  font-size: 1.8rem;
+}
+
+/* ========== ОСНОВНОЙ КОНТЕЙНЕР ========== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--color-primary-light);
+  margin: 20px 0;
+}
+
+/* ========== МЕНЮ ========== */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+/* Стили для всех ссылок меню */
+.menu a {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow);
+  border: 2px solid transparent;
+}
+
+/* Эффект при наведении */
+.menu a:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* АКТИВНЫЙ ПУНКТ МЕНЮ - КРАСНЫМ ЦВЕТОМ */
+.menu a.active {
+  background-color: var(--color-error);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary-dark);
+}
+
+.menu a.active:hover {
+  background-color: #cc0000; /* Темно-красный */
+}
+
+/* ========== ПОДМЕНЮ СОРТИРОВКИ ========== */
+.submenu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0 20px;
+  flex-wrap: wrap;
+}
+
+/* Ссылки подменю (меньше основных) */
+.submenu a {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.submenu a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* АКТИВНЫЙ ПУНКТ ПОДМЕНЮ - КРАСНЫМ ЦВЕТОМ (по ТЗ) */
+.submenu a.active {
+  background-color: var(--color-error);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+}
+
+/* ========== ТАБЛИЦА ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-gray-border);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(92, 103, 168, 0.05);
+}
+
+tr:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* ========== ПАГИНАЦИЯ ========== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.page-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  min-width: 45px;
+  text-align: center;
+}
+
+/* ПРИ НАВЕДЕНИИ - ОБВОДКА ТОЛЩИНОЙ 2PX (по ТЗ) */
+.page-link:hover {
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-primary-light);
+  transform: scale(1.05);
+}
+
+/* Активная страница */
+.page-link.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary-dark);
+}
+
+/* ========== ФОРМЫ ========== */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+label[for$="*"]::after,
+label:contains("*")::after {
+  content: " *";
+  color: var(--color-error);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--border-radius);
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px var(--color-primary-light);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+/* ========== СООБЩЕНИЯ ОБ ОШИБКАХ/УСПЕХЕ ========== */
+.success {
+  color: var(--color-success);
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success);
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error {
+  color: var(--color-error);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ========== СПИСКИ КОНТАКТОВ (edit.php, delete.php) ========== */
+.edit-list,
+.delete-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.edit-list a,
+.delete-list a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.edit-list a:hover,
+.delete-list a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ТЕКУЩАЯ ЗАПИСЬ - ВЫДЕЛЕНИЕ ЦВЕТОМ ИЛИ РАМКОЙ */
+.current-item,
+.edit-list a.current-item,
+.delete-list a.current-item {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary-dark);
+  font-weight: bold;
+}
+
+.delete-list {
+  list-style: none;
+}
+
+.delete-list li {
+  display: inline-block;
+}
+
+/* ========== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ========== */
+
+/* Стиль для звездочки обязательных полей */
+.field label[for="last_name"]::after,
+.field label[for="first_name"]::after {
+  content: " *";
+  color: var(--color-error);
+}
