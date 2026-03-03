@@ -9,7 +9,7 @@
   function get_pdo()
   {
     $host = '127.0.0.1';    // хост базы данных
-    $db = 'notebook';           // имя  БД
+    $db = 'notebook_ver2';           // имя  БД
     $user = 'root';         // логин MySQL
     $pass = '';             // пароль MySQL
     $charset = 'utf8mb4';   // кодировка таблиц БД
