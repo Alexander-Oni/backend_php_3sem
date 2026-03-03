@@ -46,34 +46,34 @@ MySQL 5.7 или выше
 Установка
 Клонируйте репозиторий
 
-bash```
+```bash
 git clone https://github.com/i1e7pl3/notebook.git
+```
 cd notebook
 
-````
+
 Создайте базу данных
 
-sql```
+```sql
 CREATE DATABASE notebook CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-````
+```
 
 Импортируйте структуру таблицы
 
-bash```
+```bash
 mysql -u root -p notebook < database.sql
-
-````
+```
 или выполните SQL-код из файла contacts.sql в phpMyAdmin
 
 Настройте подключение к БД
 Откройте config.php и при необходимости измените параметры:
 
-php```
+```php
 $host = '127.0.0.1';    // или 'localhost'
 $db = 'notebook'; // имя базы данных
 $user = 'root';         // пользователь MySQL
 $pass = ''; // пароль
-````
+```
 
 Запустите приложение
 Поместите проект в директорию веб-сервера (например, htdocs для XAMPP) и откройте в браузере:
