@@ -30,7 +30,6 @@
 <body>
   <h1>Записная книжка</h1>
   <main>
-    <!-- здесь будет логика перехода по страницам -->
     <?php
     echo get_menu();
 
@@ -49,11 +48,21 @@
       case 'delete':
         require 'delete.php';
         break;
-      /*
+      
       default:
         require_once 'viewer.php';
+
+        $sort = isset($_GET['sort']) ? $_GET['sort'] : 'created';
+          
+        $p    = isset($_GET['p']) ? (int)$_GET['p'] : 1;
+        if ($p < 1) {
+            $p = 1;
+        }
+
+        echo get_viewer($sort, $p);
+
         break;
-      */
+      
     }
     ?>
   </main>
